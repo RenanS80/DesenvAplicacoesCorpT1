@@ -17,6 +17,7 @@ form{
     padding-top: 10px;
 }
 
-form p{
-    padding-bottom: 10px;
+
+form .btn{
+    padding: 30px;
 }
