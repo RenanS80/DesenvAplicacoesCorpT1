@@ -9,17 +9,36 @@ and open the template in the editor.
         <title>Formulário de HelloWorld (usando o HelloServlet.java)</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="assets/helloform.css">
     </head>
     <body>
-        <div>Formulário de HelloWorld (usando o HelloServlet.java)</div>
-           <form action="alomundo" method="post">
-           <br>Idioma: <input type="radio" name="lang" value="pt" checked> Português
-           <input type="radio" name="lang" value="en"> Inglês
-           <input type="radio" name="lang" value="fr"> Francês
-           <input type="radio" name="lang" value="de"> Alemão<br><br>
-           Nome: <input type="text" name="nome"/><br><br>
-           <input type="submit" value="Cumprimentar"/>
-        </form>
-
+        <div class="container">
+            <div>
+                <h3>Formulário de HelloWorld (usando o HelloServlet.java)</h3>
+            </div>
+            
+            <div class="content">
+                <form action="alomundo" method="post">
+                    <div>
+                        <label>Selecione o idioma desejado</label>
+                        <input type="radio" name="lang" value="pt" checked> Português
+                        <input type="radio" name="lang" value="en"> Inglês
+                        <input type="radio" name="lang" value="fr"> Francês
+                        <input type="radio" name="lang" value="de"> Alemão
+                        <input type="radio" name="lang" value="es"> Espanhol
+                        <input type="radio" name="lang" value="ho"> Holandês
+                    </div>
+                    
+                    <div>
+                        <label>Nome</label>
+                        <input type="text" name="nome"/><br><br>
+                    </div>
+                   
+                   
+                    <input type="submit" value="Cumprimentar"/>
+                </form>
+            </div>
+            
+        </div>
     </body>
 </html>

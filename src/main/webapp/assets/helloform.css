@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Roboto, sans-serif;
+    
+}
+
+.container{
+    margin: 20px;
+}
+
+form{
+    padding-top: 10px;
+}
+
+form p{
+    padding-bottom: 10px;
+}

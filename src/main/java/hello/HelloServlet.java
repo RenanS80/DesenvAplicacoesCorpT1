@@ -7,6 +7,7 @@ package hello;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -59,6 +60,9 @@ public class HelloServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        Date date = new Date();
+        
+        
         String msg = "";
         
         String lang = request.getParameter("lang");
@@ -73,6 +77,12 @@ public class HelloServlet extends HttpServlet {
                 break;
             case "fr":
                 msg = "Bonjour, ";
+                break;
+            case "es":
+                msg = "Hola, ";
+                break;
+            case "ho":
+                msg = "Hoi, ";
                 break;
         }
         
@@ -127,6 +137,12 @@ public class HelloServlet extends HttpServlet {
                 break;
             case "de":
                 msg = "Hallo, ";
+                break;
+            case "es":
+                msg = "Hola, ";
+                break;
+            case "ho":
+                msg = "Hoi, ";
                 break;
         }
         
