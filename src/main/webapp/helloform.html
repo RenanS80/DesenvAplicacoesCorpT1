@@ -4,11 +4,12 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html lang="pt-br">
     <head>
         <title>Formulário de HelloWorld (usando o HelloServlet.java)</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/6f14f0c180.js" crossorigin="anonymous"></script>
         
         <style>
             *{
@@ -19,7 +20,37 @@ and open the template in the editor.
 
             body{
                 font-family: Roboto, sans-serif;
-
+            }
+            
+            nav{
+                height: 55px;
+                background-color: #232126;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            nav a{
+                color: #F4F2F7;
+                text-decoration: none;
+            }
+            
+            nav a:first-child{
+                padding-left: 30px;
+            }
+            
+            nav a:last-child{
+                padding-right: 30px;
+            }
+            
+            nav a:last-child:hover{
+                color: #CD6F76;
+                transition: 0.4s ease-in-out;
+            }
+            
+            i:hover{
+                color: #CD6F76;
+                transition: 0.4s ease-in-out;
             }
             
             .container{
@@ -30,11 +61,6 @@ and open the template in the editor.
                 justify-content: center;
                 align-items: center;
             }
-
-            
-            .content{
-                border: 1px solid red;
-            }
             
             form, .nome{
                 padding-top: 14px;
@@ -43,7 +69,7 @@ and open the template in the editor.
             
             button{
                 margin: 15px 0px 0px 30px;
-                padding: 10px;
+                padding: 12px 17px;
                 border: 0px;
                 background-color: #1E86D7;
                 color: #F4F2F7;
@@ -64,20 +90,33 @@ and open the template in the editor.
             }
             
             input[type="text"]{
-                height: 25px;
-                
+                height: 25px;   
+            }
+            
+            input[type="text"]:focus{
+                outline-color: #1E86D7;
             }
         
         </style>
     </head>
+    
     <body>
+        <header>
+            <nav>
+                <a href="https://github.com/RenanS80/DesenvAplicacoesCorpT1" target="_blank">
+                    <i class="fab fa-github" style="font-size: 24px"></i>
+                </a>
+                <a href="https://www.uff.br/" target="_blank"> UFF</a>
+            </nav>
+        </header>
+        
         <div class="container">
             <div>
-                <h3>Formulário de HelloWorld (usando o HelloServlet.java)</h3>
+                <h2>Formulário de HelloWorld</h2>
             </div>
             
             <form action="alomundo" method="post">
-                <div class="idiomas">
+                <div>
                     <label>Selecione o idioma desejado</label> <br>
                     <input type="radio" name="lang" value="pt" checked> Português <br>
                     <input type="radio" name="lang" value="en"> Inglês <br>

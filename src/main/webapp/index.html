@@ -6,21 +6,121 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Demo do Tópico 1</title>
+        <title>Tarefa Heroku</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="assets/index.css">
-    </head>
-    <body>
-        <div class="container">
+        <script src="https://kit.fontawesome.com/6f14f0c180.js" crossorigin="anonymous"></script>
+        
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body{
+                font-family: Roboto, sans-serif;   
+            }
+
+            nav{
+                height: 55px;
+                background-color: #232126;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
             
+            nav a{
+                color: #F4F2F7;
+                text-decoration: none;
+            }
+            
+            nav a:first-child{
+                padding-left: 30px;
+            }
+            
+            nav a:last-child{
+                padding-right: 30px;
+            }
+            
+            nav a:last-child:hover{
+                color: #CD6F76;
+                transition: 0.4s ease-in-out;
+            }
+            
+            i:hover{
+                color: #CD6F76;
+                transition: 0.4s ease-in-out;
+            }
+                       
+            .container{
+                margin-top: 50px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .content{
+                display: flex;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+
+            h3{
+                color: #232126;
+            }
+
+            .servlet, .form{
+                margin: 10px 20px;
+                padding: 15px;
+                text-decoration: none;
+            }
+
+            .servlet{
+                color: #F4F2F7;
+                background-color: #1E86D7;
+            }
+
+            .servlet:hover{
+                background-color: #165E95;
+                transition: 0.4s ease-in-out;
+            }
+
+            .form{
+                border: 1px solid #8C2B33;
+                color: #8C2B33;
+            }
+
+            .form:hover{
+                background-color: #8C2B33;
+                color: white;
+                transition: 0.4s ease-in-out;
+            }
+
+        </style>
+    
+    </head>
+    
+    
+    <body>
+        <header>
+            <nav>
+                <a href="https://github.com/RenanS80/DesenvAplicacoesCorpT1" target="_blank">
+                    <i class="fab fa-github" style="font-size: 24px"></i>
+                </a>
+                <a href="https://www.uff.br/" target="_blank"> UFF</a>
+            </nav>
+        </header>
+        
+        <div class="container">
             <div>
                 <h3>Funcionalidades disponíveis:</h3>
             </div>
 
             <div class="content">
-                <a href=".\alomundo?lang=pt&nome=Fulano">Servlet (GET)</a> 
-                <a href=".\helloform.html">Formulário (POST)</a>
+                <a href=".\alomundo?lang=pt&nome=Fulano" class="servlet">Servlet (GET)</a> 
+                <a href=".\helloform.html" class="form">Formulário (POST)</a>
             </div>
         </div>
         

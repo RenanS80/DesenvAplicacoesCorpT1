@@ -66,7 +66,7 @@ public class HelloServlet extends HttpServlet {
         // Instância para verificar as horas e formatar a data atual
         Calendar calendar = new GregorianCalendar();
         Date date = new Date();
-        SimpleDateFormat dt = new SimpleDateFormat("HH:mm:ss");
+        SimpleDateFormat dt = new SimpleDateFormat("dd/MM/YYYY");
         
         String msg = "";
         
@@ -103,7 +103,7 @@ public class HelloServlet extends HttpServlet {
                     msg = "Bonjour, ";
 	     	}
                 else if(calendar.get((Calendar.HOUR_OF_DAY)) >= 12 && (calendar.get(Calendar.HOUR_OF_DAY) < 18)) {
-                    msg = "Bonne apr�s-midi, ";
+                    msg = "Bon apres-midi, ";
                 }
                 else if(calendar.get(Calendar.HOUR_OF_DAY) >= 18){
                     msg = "Bonne nuit, ";
@@ -152,7 +152,7 @@ public class HelloServlet extends HttpServlet {
         if(nome==null)
             nome = "Fulano";
         
-        msg = msg+nome+"!"+" São "+dt.format(date);
+        msg = msg+nome+"!"+" Data: "+dt.format(date);
 
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -185,7 +185,7 @@ public class HelloServlet extends HttpServlet {
         // Instância para verificar as horas e formatar a data atual
         Calendar calendar = new GregorianCalendar();
         Date date = new Date();
-        SimpleDateFormat dt = new SimpleDateFormat("HH:mm:ss");
+        SimpleDateFormat dt = new SimpleDateFormat("dd/MM/YYYY");
         
         String msg = "";
         
@@ -222,7 +222,7 @@ public class HelloServlet extends HttpServlet {
                     msg = "Bonjour, ";
 	     	}
                 else if(calendar.get((Calendar.HOUR_OF_DAY)) >= 12 && (calendar.get(Calendar.HOUR_OF_DAY) < 18)) {
-                    msg = "Bonne apr�s-midi, ";
+                    msg = "Bon apres-midi, ";
                 }
                 else if(calendar.get(Calendar.HOUR_OF_DAY) >= 18){
                     msg = "Bonne nuit, ";
@@ -271,7 +271,7 @@ public class HelloServlet extends HttpServlet {
         if(nome==null)
             nome = "Fulano";
         
-        msg = msg+nome+"!"+" São "+dt.format(date);
+        msg = msg+nome+"!"+" Data: "+dt.format(date);
 
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
