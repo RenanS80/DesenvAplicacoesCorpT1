@@ -7,7 +7,10 @@ package hello;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -60,8 +63,10 @@ public class HelloServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        // Instância para verificar as horas e formatar a data atual
+        Calendar calendar = new GregorianCalendar();
         Date date = new Date();
-        
+        SimpleDateFormat dt = new SimpleDateFormat("HH:mm:ss");
         
         String msg = "";
         
@@ -70,28 +75,84 @@ public class HelloServlet extends HttpServlet {
             lang = "pt";
         switch(lang){
             case "pt":
-                msg = "Alô, ";
-                break;
-            case "en":
-                msg = "Hello, ";
-                break;
+                if(calendar.get(Calendar.HOUR_OF_DAY) < 12) {
+                    msg = "Bom dia, ";
+	        }
+                else if(calendar.get((Calendar.HOUR_OF_DAY)) >= 12 && (calendar.get(Calendar.HOUR_OF_DAY) < 18)) {
+                    msg = "Boa tarde, ";
+	        }
+                else if(calendar.get(Calendar.HOUR_OF_DAY) >= 18){
+                    msg = "Boa noite, ";
+                }	        	
+	        break;
+                
+	    case "en":
+                if(calendar.get(Calendar.HOUR_OF_DAY) < 12) {
+                    msg = "Good morning, ";
+                }
+                else if(calendar.get((Calendar.HOUR_OF_DAY)) >= 12 && (calendar.get(Calendar.HOUR_OF_DAY) < 18)) {
+                    msg = "Good afternoon, ";
+                }
+                else if(calendar.get(Calendar.HOUR_OF_DAY) >= 18){
+                    msg = "Good night, ";
+                }	  
+	        break;
+                    
             case "fr":
-                msg = "Bonjour, ";
+                if(calendar.get(Calendar.HOUR_OF_DAY) < 12) {
+                    msg = "Bonjour, ";
+	     	}
+                else if(calendar.get((Calendar.HOUR_OF_DAY)) >= 12 && (calendar.get(Calendar.HOUR_OF_DAY) < 18)) {
+                    msg = "Bonne apr�s-midi, ";
+                }
+                else if(calendar.get(Calendar.HOUR_OF_DAY) >= 18){
+                    msg = "Bonne nuit, ";
+	        }
                 break;
+                        
+            case "de":
+	      	if(calendar.get(Calendar.HOUR_OF_DAY) < 12) {
+                    msg = "Guten morgen, ";
+	      	}
+                else if(calendar.get((Calendar.HOUR_OF_DAY)) >= 12 && (calendar.get(Calendar.HOUR_OF_DAY) < 18)) {
+                    msg = "Guten nachmittag, ";
+	      	}
+                else if(calendar.get(Calendar.HOUR_OF_DAY) >= 18){
+                    msg = "Gute nacht, ";
+	      	}	
+                break;
+                        
             case "es":
-                msg = "Hola, ";
+	      	if(calendar.get(Calendar.HOUR_OF_DAY) < 12) {
+                    msg = "Buenos dias, ";
+	      	}
+                else if(calendar.get((Calendar.HOUR_OF_DAY)) >= 12 && (calendar.get(Calendar.HOUR_OF_DAY) < 18)) {
+                    msg = "Buenas tardes, ";
+	      	}
+                else if(calendar.get(Calendar.HOUR_OF_DAY) >= 18){
+                    msg = "Buenas noches, ";
+	      	}
                 break;
+	    
             case "ho":
-                msg = "Hoi, ";
+	      	if(calendar.get(Calendar.HOUR_OF_DAY) < 12) {
+                    msg = "Goedemorgen, ";
+	      	}
+                else if(calendar.get((Calendar.HOUR_OF_DAY)) >= 12 && (calendar.get(Calendar.HOUR_OF_DAY) < 18)) {
+                    msg = "Goedenmiddag, ";
+	      	}
+                else if(calendar.get(Calendar.HOUR_OF_DAY) >= 18){
+                    msg = "Welterusten, ";
+	      	}	 
                 break;
-        }
+            }
         
         String nome = request.getParameter("nome");
 
         if(nome==null)
             nome = "Fulano";
         
-        msg = msg+nome+"!";
+        msg = msg+nome+"!"+" São "+dt.format(date);
 
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -120,6 +181,12 @@ public class HelloServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        // Instância para verificar as horas e formatar a data atual
+        Calendar calendar = new GregorianCalendar();
+        Date date = new Date();
+        SimpleDateFormat dt = new SimpleDateFormat("HH:mm:ss");
+        
         String msg = "";
         
         String lang = request.getParameter("lang");
@@ -127,31 +194,84 @@ public class HelloServlet extends HttpServlet {
             lang = "pt";
         switch(lang){
             case "pt":
-                msg = "Alô, ";
-                break;
-            case "en":
-                msg = "Hello, ";
-                break;
+                if(calendar.get(Calendar.HOUR_OF_DAY) < 12) {
+                    msg = "Bom dia, ";
+	        }
+                else if(calendar.get((Calendar.HOUR_OF_DAY)) >= 12 && (calendar.get(Calendar.HOUR_OF_DAY) < 18)) {
+                    msg = "Boa tarde, ";
+	        }
+                else if(calendar.get(Calendar.HOUR_OF_DAY) >= 18){
+                    msg = "Boa noite, ";
+                }	        	
+	        break;
+                
+	    case "en":
+                if(calendar.get(Calendar.HOUR_OF_DAY) < 12) {
+                    msg = "Good morning, ";
+                }
+                else if(calendar.get((Calendar.HOUR_OF_DAY)) >= 12 && (calendar.get(Calendar.HOUR_OF_DAY) < 18)) {
+                    msg = "Good afternoon, ";
+                }
+                else if(calendar.get(Calendar.HOUR_OF_DAY) >= 18){
+                    msg = "Good night, ";
+                }	  
+	        break;
+                    
             case "fr":
-                msg = "Bonjour, ";
+                if(calendar.get(Calendar.HOUR_OF_DAY) < 12) {
+                    msg = "Bonjour, ";
+	     	}
+                else if(calendar.get((Calendar.HOUR_OF_DAY)) >= 12 && (calendar.get(Calendar.HOUR_OF_DAY) < 18)) {
+                    msg = "Bonne apr�s-midi, ";
+                }
+                else if(calendar.get(Calendar.HOUR_OF_DAY) >= 18){
+                    msg = "Bonne nuit, ";
+	        }
                 break;
+                        
             case "de":
-                msg = "Hallo, ";
+	      	if(calendar.get(Calendar.HOUR_OF_DAY) < 12) {
+                    msg = "Guten morgen, ";
+	      	}
+                else if(calendar.get((Calendar.HOUR_OF_DAY)) >= 12 && (calendar.get(Calendar.HOUR_OF_DAY) < 18)) {
+                    msg = "Guten nachmittag, ";
+	      	}
+                else if(calendar.get(Calendar.HOUR_OF_DAY) >= 18){
+                    msg = "Gute nacht, ";
+	      	}	
                 break;
+                        
             case "es":
-                msg = "Hola, ";
+	      	if(calendar.get(Calendar.HOUR_OF_DAY) < 12) {
+                    msg = "Buenos dias, ";
+	      	}
+                else if(calendar.get((Calendar.HOUR_OF_DAY)) >= 12 && (calendar.get(Calendar.HOUR_OF_DAY) < 18)) {
+                    msg = "Buenas tardes, ";
+	      	}
+                else if(calendar.get(Calendar.HOUR_OF_DAY) >= 18){
+                    msg = "Buenas noches, ";
+	      	}
                 break;
+	    
             case "ho":
-                msg = "Hoi, ";
+	      	if(calendar.get(Calendar.HOUR_OF_DAY) < 12) {
+                    msg = "Goedemorgen, ";
+	      	}
+                else if(calendar.get((Calendar.HOUR_OF_DAY)) >= 12 && (calendar.get(Calendar.HOUR_OF_DAY) < 18)) {
+                    msg = "Goedenmiddag, ";
+	      	}
+                else if(calendar.get(Calendar.HOUR_OF_DAY) >= 18){
+                    msg = "Welterusten, ";
+	      	}	 
                 break;
-        }
+            }
         
         String nome = request.getParameter("nome");
 
         if(nome==null)
             nome = "Fulano";
         
-        msg = msg+nome+"!";
+        msg = msg+nome+"!"+" São "+dt.format(date);
 
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
