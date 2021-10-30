@@ -189,6 +189,8 @@ public class HelloServlet extends HttpServlet {
         
         String msg = "";
         
+        
+        // Verificação da linguagem
         String lang = request.getParameter("lang");
         if(lang==null)
             lang = "pt";
@@ -266,12 +268,28 @@ public class HelloServlet extends HttpServlet {
                 break;
             }
         
+        // Verificação do nome
         String nome = request.getParameter("nome");
-
         if(nome==null)
             nome = "Fulano";
         
-        msg = msg+nome+"!"+" Data: "+dt.format(date);
+        // Verificação do tratamento
+        String trat = request.getParameter("trat");
+        switch(trat){
+            case "nenhum":
+                trat = "";	        	
+	        break;
+                
+            case "sr":
+                trat = "Sr. ";	        	
+	        break;
+                
+            case "sra":
+                trat = "Sra. ";	        	
+	        break;
+        }
+        
+        msg = msg+trat+nome+"!"+" Data: "+dt.format(date);
 
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
