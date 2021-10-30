@@ -161,11 +161,33 @@ public class HelloServlet extends HttpServlet {
 	        break;
                 
             case "sr":
-                trat = "Sr. ";	        	
+                if("pt".equals(lang))
+                    trat = "Sr ";
+                if ("en".equals(lang))
+                    trat = "Sir ";
+                if("fr".equals(lang))
+                    trat = "Monsieur ";
+                if("de".equals(lang))
+                    trat = "Herr ";
+                if("es".equals(lang))
+                    trat = "Señor ";
+                if("ho".equals(lang))
+                    trat = "Meneer ";
 	        break;
                 
             case "sra":
-                trat = "Sra. ";	        	
+                if("pt".equals(lang))
+                    trat = "Sra ";
+                if ("en".equals(lang))
+                    trat = "Mrs ";
+                if("fr".equals(lang))
+                    trat = "Mme ";
+                if("de".equals(lang))
+                    trat = "Frau ";
+                if("es".equals(lang))
+                    trat = "Señora ";
+                if("ho".equals(lang))
+                    trat = "Mvr ";
 	        break;
         }
         
@@ -297,11 +319,33 @@ public class HelloServlet extends HttpServlet {
 	        break;
                 
             case "sr":
-                trat = "Sr. ";	        	
+                if("pt".equals(lang))
+                    trat = "Sr ";
+                if ("en".equals(lang))
+                    trat = "Sir ";
+                if("fr".equals(lang))
+                    trat = "Monsieur ";
+                if("de".equals(lang))
+                    trat = "Herr ";
+                if("es".equals(lang))
+                    trat = "Señor ";
+                if("ho".equals(lang))
+                    trat = "Meneer ";
 	        break;
                 
             case "sra":
-                trat = "Sra. ";	        	
+                if("pt".equals(lang))
+                    trat = "Sra ";
+                if ("en".equals(lang))
+                    trat = "Mrs ";
+                if("fr".equals(lang))
+                    trat = "Mme ";
+                if("de".equals(lang))
+                    trat = "Frau ";
+                if("es".equals(lang))
+                    trat = "Señora ";
+                if("ho".equals(lang))
+                    trat = "Mvr ";
 	        break;
         }
         
